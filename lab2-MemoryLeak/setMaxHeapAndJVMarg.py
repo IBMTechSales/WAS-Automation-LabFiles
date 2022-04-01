@@ -1,0 +1,3 @@
+AdminTask.setJVMProperties('[-nodeName studentNode02 -serverName tWAS_9056_server -verboseModeClass false -verboseModeGarbageCollection true -verboseModeJNI false -maximumHeapSize 512 -runHProf false -hprofArguments -debugMode false -debugArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7777" -executableJarFileName -genericJvmArguments "-Xshareclasses:enableBCI" -disableJIT false]')
+
+AdminConfig.save()
