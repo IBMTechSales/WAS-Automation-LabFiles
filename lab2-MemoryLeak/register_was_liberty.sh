@@ -13,13 +13,13 @@ oc get secret external-tls-secret -n websphere-automation -o jsonpath='{.data.ce
 
 /opt/IBM/WebSphere/AppServer9056/bin/wsadmin.sh -f /api-usagemetering/scripts/configuretWasUsageMetering.py url=$(cat /opt/IBM/WebSphere/metering-url.txt) apiKey=$(cat /opt/IBM/WebSphere/api-key.txt) trustStorePassword=th1nkpassword
 
-/home/ibmuser/WSAlab2/tWAS_setup_MLApp.sh
+/home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/tWAS_setup_MLApp.sh
 
 /opt/IBM/WebSphere/AppServer9056/bin/stopServer.sh tWAS_9056_server
 
 /opt/IBM/WebSphere/Liberty200012/bin/server create Liberty_200012_server
 
-cp -f /home/ibmuser/WSAlab2/server_wsa.xml /opt/IBM/WebSphere/Liberty200012/usr/servers/Liberty_200012_server/server.xml
+cp -f /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/server_wsa.xml /opt/IBM/WebSphere/Liberty200012/usr/servers/Liberty_200012_server/server.xml
 
 /opt/IBM/WebSphere/Liberty200012/bin/server start Liberty_200012_server
 
@@ -40,7 +40,7 @@ echo "-javaagent:/opt/IBM/WebSphere/Liberty200012/bin/tools/ws-javaagent.jar" >>
 
 /opt/IBM/WebSphere/Liberty200012/bin/server stop Liberty_200012_server 
 
-cp -f /home/ibmuser/WSAlab2/MLApp.war /opt/IBM/WebSphere/Liberty200012/usr/servers/Liberty_200012_server/dropins/.
+cp -f /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/MLApp.war /opt/IBM/WebSphere/Liberty200012/usr/servers/Liberty_200012_server/dropins/.
 
 /opt/IBM/WebSphere/Liberty200012/bin/server start Liberty_200012_server --clean
 
