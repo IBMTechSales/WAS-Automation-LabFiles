@@ -23,6 +23,149 @@ fi
 
 
 echo ""
+echo "-----------------------------------------------------------------------"
+echo "Login to OCP"
+echo "" 
+echo "oc login --username=ibmadmin --password=engageibm --insecure-skip-tls-verify=true --server=https://api.demo.ibmdte.net:6443"
+echo ""
+echo "-----------------------------------------------------------------------"
+echo "" 
+
+oc login --username=ibmadmin --password=engageibm --insecure-skip-tls-verify=true --server=https://api.demo.ibmdte.net:6443
+
+sleep 5
+
+echo ""
+echo "-----------------------------------------------------------------------"
+echo "switch to the 'websphere-automation' project in OCP"
+echo "" 
+echo "oc project websphere-automation"
+echo ""
+echo "-----------------------------------------------------------------------"
+echo "" 
+
+
+oc project websphere-automation
+
+
+echo ""
+echo "-----------------------------------------------------------------------"
+echo "change to /home/ibmuser directory"
+echo ""
+echo "-----------------------------------------------------------------------"
+echo ""
+
+cd /home/ibmuser
+ 
+
+echo ""
+echo "-----------------------------------------------------------------------"
+echo "run ssh-keygen command"
+echo "" 
+echo "--> Type 'passw0rd' when prompted to set a password for the ssh key  (note the zero)"
+echo ""
+echo "-----------------------------------------------------------------------"
+echo ""
+
+ssh-keygen -f ~/.ssh/wsa
+
+
+
+echo "-------------------------------------------------------------------------"
+echo "Run ssh-copy-key command"
+echo ""
+echo " -->  Type 'yes' when prompted to continue"
+echo ""
+echo "--->  Type 'engageibm' when prompted for the 'ibmuser' userID (note the zero)"
+echo ""
+echo "-------------------------------------------------------------------------"
+
+
+ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
+
+echo ""
+echo "----------------------------------------------------------------------"
+echo "create the 'wsa-ansible' secret in OCP"
+echo ""
+echo "oc create secret generic wsa-ansible "\"
+echo "  --from-literal=ansible_user=ibmuser "\"
+echo "  --from-literal=ansible_port=22 "\"
+echo "  --from-file=ssh_private_key_file=/home/ibmuser/.ssh/wsa "\"
+echo "  --from-literal=ssh_private_key_password=passw0rd"
+echo ""
+echo "----------------------------------------------------------------------"
+
+oc create secret generic wsa-ansible \
+ --from-literal=ansible_user=ibmuser \
+ --from-literal=ansible_port=22 \
+ --from-file=ssh_private_key_file=/home/ibmuser/.ssh/wsa \
+ --from-literal=ssh_private_key_password=passw0rd
+
+
+echo ""
+echo "----------------------------------------------------------------------"
+echo "run ssh-keyscan command to produce the 'wsa_known_hosts' file"
+echo ""
+echo "ssh-keyscan student.demo.ibmdte.net >> /home/ibmuser/wsa_known_hosts"
+echo ""
+echo "----------------------------------------------------------------------"
+
+ssh-keyscan student.demo.ibmdte.net >> /home/ibmuser/wsa_known_hosts
+
+
+echo ""
+echo "---------------------------------------------------------------------"
+echo "create the wsa-ansible-known-hosts configmap in OCP"
+echo ""
+echo "oc create configmap wsa-ansible-known-hosts --from-file=known_hosts=/home/ibmuser/wsa_known_hosts"
+echo ""
+echo "---------------------------------------------------------------------"
+
+
+oc create configmap wsa-ansible-known-hosts --from-file=known_hosts=/home/ibmuser/wsa_known_hosts
+
+
+echo ""
+echo "---------------------------------------------------------------------"
+echo "get the wsa-secure-fixcentral-creds secret"
+echo ""
+echo "oc get secret | grep wsa-secure-fixcentral-creds"
+echo ""
+echo "---------------------------------------------------------------------"
+
+oc get secret | grep wsa-secure-fixcentral-creds
+
+
+
+echo ""
+echo "---------------------------------------------------------------------"
+echo "List the WSA Pods, and see that they are running"
+echo ""
+echo "oc get pods | grep '\<fix\>\|installation'"
+echo ""
+echo "---------------------------------------------------------------------"
+
+oc get pods | grep '\<fix\>\|installation'
+
+sleep 5
+
+
+
+########################
+# Verfy the confguration
+########################
+
+
+echo "-----------------------------------------------"
+echo ""
+echo " Now verifying the configuration"
+echo ""
+echo "-----------------------------------------------"
+
+sleep 5
+
+
+echo ""
 echo "Looking for '$GOOD_MESSAGE' in log output to indicate the configuration is correct"
 echo ""
 
@@ -119,87 +262,7 @@ if [[ "$IS_GOOD" -gt 0 ]]; then
   echo ""
 fi
 
-exit 1
 
-
-echo "Login to CP"
-
-oc login --username=ibmadmin --password=engageibm --insecure-skip-tls-verify=true --server=https://api.demo.ibmdte.net:6443
-
-echo "swith to the websphere-automation project in OCP" 
-oc project websphere-automation
-
-
-echo "change to /home/ibmuser directory"
-cd /home/ibmuser
- 
-
-echo "run ssh-keygen command"
-echo "enter password as: passw0rd when prompted (note the zero)"
-ssh-keygen -f ~/.ssh/wsa
-
-
-echo "run ssh-copy-key command"
-echo "Type 'yes' when prompted to contimue"
-echo "ENter password as:  engageibm  when prompted for the ibmuser's password"
-ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
-
-
-echo "create the 'wsa-ansible' secret in OCP"
-oc create secret generic wsa-ansible \
- --from-literal=ansible_user=ibmuser \
- --from-literal=ansible_port=22 \
- --from-file=ssh_private_key_file=/home/ibmuser/.ssh/wsa \
- --from-literal=ssh_private_key_password=passw0rd
-
-
-echo "run ssh-keyscan command to produce the 'wsa_known_hosts' file"
-ssh-keyscan student.demo.ibmdte.net >> /home/ibmuser/wsa_known_hosts
-
-
-
-echo "create the wsa-ansible-known-hosts configmap in OCP"
-oc create configmap wsa-ansible-known-hosts --from-file=known_hosts=/home/ibmuser/wsa_known_hosts
-
-
-### Can we test the commection here?
-
-
-echo "get the wsa-secure-fixcentral-creds secret"
-oc get secret | grep wsa-secure-fixcentral-creds
-
-
-echo "List the WSA Pods, and see that they are running"
-oc get pods | grep '\<fix\>\|installation'
-
-
-
-GOOD_MESSAGE="code=0"
-echo "Good message is: $GOOD_MESSSAGE"
-
-echo "run the test connection runbook"
-#MANAGER_POD=$(oc get pod -l app.kubernetes.io/component=runbook-manager -o name | head -n 1)
-#oc rsh $MANAGER_POD runcli testConnection student.demo.ibmdte.net linux
-
-echo "waiting 30 seconds for pod to start and run the test conection"
-#sleep 30
-
-echo "get the name of the test-connection pod"
-oc get pods  | grep test-connection | head -n 1 | cut -d " " -f1
-#example output from command abpve: 'test-connection-1678461489800'
-TEST_CONN=$(oc get pods  | grep test-connection | head -n 1 | cut -d " " -f1)
-echo "TEST_CON: $TEST_CONN"
-
-echo "view the log from the test commection job"
-
-echo "oc logs command: oc logs --tail=100 $TEST_CONN | grep $GOOD_MESSAGE"
-IS_GOOD=$(oc logs --tail=100 $TEST_CONN | grep $GOOD_MESSAGE | wc -l)
-
-if [[ "$IS_GOOD" -gt 0 ]]; then 
-  echo "is good"
-else 
-  echo "not good"
-fi
 
 
 
