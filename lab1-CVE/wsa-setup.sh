@@ -20,6 +20,34 @@ if [[ "$TEST_POD_COUNT" -gt 0 ]]; then
   oc get pods -n websphere-automation --no-headers=true | awk '/test-connection/{print $1}'| xargs  oc delete -n websphere-automation pod
 fi
 
+WSA_ANSIBLE_SECRET_COUNT=$(oc get secret | grep wsa-ansible | wc -l)
+
+if [[ "$WSA_ANSIBLE_SECRET_COUNT" -gt 0 ]]; then 
+  echo "removing old wsa-ansible secret"
+  oc delete secret wsa-ansible -n websphere-automation
+fi
+
+
+ANSIBLE_KNOWN_HOSTS_CONFIGMAP_COUNT=$(oc get configmap wsa-ansible-known-hosts -n websphere-automation | wc -l)
+
+if [[ "$ANSIBLE_KNOWN_HOSTS_CONFIGMAP_COUNT" -gt 0 ]]; then 
+  echo "removing old wsa-ansible-known-hosts configmap"
+  oc delete configmap wsa-ansible-known-hosts -n websphere-automation
+fi
+
+
+
+if [[ -f /home/ibmuser/.ssh/wsa ]]; then
+  echo "removing old wsa file in ~/.ssh directory"  
+  rm /home/ibmuser/.ssh/wsa
+fi
+
+
+if [[ -f /home/ibmuser/.ssh/known_hosts ]]; then
+  echo "removing old known_hosts file in ~/.ssh directory"  
+  rm /home/ibmuser/.ssh/known_hosts
+fi
+
 
 
 echo ""
@@ -261,7 +289,6 @@ if [[ "$IS_GOOD" -gt 0 ]]; then
   echo "----------------------------------------------------------------------------------------------"
   echo ""
 fi
-
 
 
 
