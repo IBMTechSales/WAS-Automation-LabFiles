@@ -90,35 +90,26 @@ echo ""
 echo "-----------------------------------------------------------------------"
 echo "run ssh-keygen command"
 echo "" 
-echo "--> Type 'passw0rd' if  prompted to set a password for the ssh key  (note the zero)"
+echo "--> Type 'passw0rd' when prompted to set a password for the ssh key  (note the zero)"
 echo ""
 echo "-----------------------------------------------------------------------"
 echo ""
 
-ssh-keygen -N "passw0rd" -f ~/.ssh/wsa
+ssh-keygen -f ~/.ssh/wsa
 
 
 
 echo "-------------------------------------------------------------------------"
-echo "Run ssh-copy-id command"
+echo "Run ssh-copy-key command"
 echo ""
-echo " -->  Type 'yes' if prompted to continue"
+echo " -->  Type 'yes' when prompted to continue"
 echo ""
 echo "--->  Type 'engageibm' when prompted for the 'ibmuser' userID (note the zero)"
 echo ""
 echo "-------------------------------------------------------------------------"
 
-## The command below requires a file named "config" in ~/.ssh with the folowing line in the file. 
-## StrictHostKeyChecking no
 
-\cp /home/ibmuser/WAS-Automation-LabFiles/lab1-CVE/ssh-config.txt ~/.ssh/config
-
-slep 1
-
-sshpass -p "engageibm" ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
-#ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
-
-
+ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
 
 echo ""
 echo "----------------------------------------------------------------------"
@@ -221,7 +212,7 @@ MANAGER_POD=$(oc get pod -l app.kubernetes.io/component=runbook-manager -o name 
 oc rsh $MANAGER_POD runcli testConnection student.demo.ibmdte.net linux
 
 echo ""
-echo "waiting 60 seconds for pod to start and run the test conection Ansible playbook"
+echo "waiting 60 seconds for pod to start and run the test conection playbook"
 echo ""
 sleep 15
 echo "45 seconds remaining..."
@@ -298,6 +289,7 @@ if [[ "$IS_GOOD" -gt 0 ]]; then
   echo "----------------------------------------------------------------------------------------------"
   echo ""
 fi
+
 
 
 
