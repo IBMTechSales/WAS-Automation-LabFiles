@@ -113,7 +113,7 @@ echo "-------------------------------------------------------------------------"
 
 \cp /home/ibmuser/WAS-Automation-LabFiles/lab1-CVE/ssh-config.txt ~/.ssh/config
 
-slep 1
+sleep 1
 
 sshpass -p "engageibm" ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
 #ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net

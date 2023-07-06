@@ -23,7 +23,13 @@ echo "cp /opt/instana/agent/etc/instana/configuration.yaml /home/ibmuser"
 echo "cp /opt/instana/agent/etc/instana/configuration.yaml /opt/instana/agent/etc/instana/configuration.yaml.BAK"
 echo ""
 
-sudo rm /home/ibmuser/configuration.yaml
+if [[ -f /home/ibmuser/configuration.yaml ]]; then
+  echo "removing old configuration.yaml in /home/ibmuser directory"  
+  sudo rm /home/ibmuser/configuration.yaml
+fi
+
+
+
 sleep 1
 sudo \cp /opt/instana/agent/etc/instana/configuration.yaml /home/ibmuser
 sleep 1

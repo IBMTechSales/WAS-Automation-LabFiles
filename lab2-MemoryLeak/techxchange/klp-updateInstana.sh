@@ -32,7 +32,7 @@ echo ""
 echo "-----------------------------------------------------------------------"
 echo "" 
 
-cd /home/ibmuser
+cd /home/ibmadmin
 
 
 # update settings.hcl with location of cacerts keystore 

@@ -178,12 +178,12 @@ echo ""
 echo "-----------------------------------------------------------------------"
 echo "Copy the remote script, updateInstana.sh to the instana vm"
 echo "" 
-echo "scp /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh"
+echo "scp /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/techxchange/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh"
 echo ""
 echo "-----------------------------------------------------------------------"
 echo "" 
 
-sshpass -p "passw0rd" scp /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh
+sshpass -p "passw0rd" scp /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/techxchange/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh
 
 sleep 2
 
