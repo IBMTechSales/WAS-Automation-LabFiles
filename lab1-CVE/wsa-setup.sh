@@ -48,7 +48,16 @@ if [[ -f /home/ibmuser/.ssh/known_hosts ]]; then
   rm /home/ibmuser/.ssh/known_hosts
 fi
 
+if [[ -f /home/ibmuser/.ssh/authorized_keys ]]; then
+  echo "removing old authorized_keys file in ~/.ssh directory"  
+  rm /home/ibmuser/.ssh/authorized_keys
+fi
 
+
+echo "list the home.ibmuser/.ssh directory after cleanup"
+ls -al /home/ibmuser/.ssh
+
+sleep 5
 
 echo ""
 echo "-----------------------------------------------------------------------"
@@ -108,17 +117,24 @@ echo "--->  Type 'engageibm' when prompted for the 'ibmuser' userID (note the ze
 echo ""
 echo "-------------------------------------------------------------------------"
 
+sleep 4
+
 ## The command below requires a file named "config" in ~/.ssh with the folowing line in the file. 
 ## StrictHostKeyChecking no
 
 \cp /home/ibmuser/WAS-Automation-LabFiles/lab1-CVE/ssh-config.txt ~/.ssh/config
 
 sleep 1
+chmod 700 ~/.ssh/config
+
+ls -al ~/.ssh
+
+sleep 3
 
 sshpass -p "engageibm" ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
 #ssh-copy-id -i ~/.ssh/wsa ibmuser@student.demo.ibmdte.net
 
-
+sleep 3
 
 echo ""
 echo "----------------------------------------------------------------------"
@@ -138,6 +154,7 @@ oc create secret generic wsa-ansible \
  --from-file=ssh_private_key_file=/home/ibmuser/.ssh/wsa \
  --from-literal=ssh_private_key_password=passw0rd
 
+sleep 3
 
 echo ""
 echo "----------------------------------------------------------------------"
@@ -149,6 +166,7 @@ echo "----------------------------------------------------------------------"
 
 ssh-keyscan student.demo.ibmdte.net >> /home/ibmuser/wsa_known_hosts
 
+sleep 4
 
 echo ""
 echo "---------------------------------------------------------------------"
@@ -161,6 +179,7 @@ echo "---------------------------------------------------------------------"
 
 oc create configmap wsa-ansible-known-hosts --from-file=known_hosts=/home/ibmuser/wsa_known_hosts
 
+sleep 3
 
 echo ""
 echo "---------------------------------------------------------------------"
@@ -172,7 +191,7 @@ echo "---------------------------------------------------------------------"
 
 oc get secret | grep wsa-secure-fixcentral-creds
 
-
+sleep 2
 
 echo ""
 echo "---------------------------------------------------------------------"
@@ -184,9 +203,13 @@ echo "---------------------------------------------------------------------"
 
 oc get pods | grep '\<fix\>\|installation'
 
-sleep 5
+sleep 4
 
 
+echo "list the /home/ibmuser/.ssh dir to be sure the known-hosts file exists"
+ls -al /home/ibmuser/.ssh 
+
+sleep 4
 
 ########################
 # Verfy the confguration
@@ -298,6 +321,5 @@ if [[ "$IS_GOOD" -gt 0 ]]; then
   echo "----------------------------------------------------------------------------------------------"
   echo ""
 fi
-
 
 
