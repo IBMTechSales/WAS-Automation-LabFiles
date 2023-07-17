@@ -1,5 +1,5 @@
 #!/bin/sh
-XEND=325
+XEND=285
 X=1
 while [ $X -le $XEND ]
 do
