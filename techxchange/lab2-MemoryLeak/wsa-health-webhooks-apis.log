@@ -1,0 +1,501 @@
+Found mounted TLS certificates, generating keystore
+
+Launching defaultServer (Open Liberty 23.0.0.5/wlp-1.0.77.cl230520230514-1901) on Eclipse OpenJ9 VM, version 11.0.19+7 (en_US)
+[AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+[AUDIT   ] CWWKG0093A: Processing configuration drop-ins resource: /opt/ol/wlp/usr/servers/defaultServer/configDropins/defaults/keystore.xml
+[AUDIT   ] CWWKG0093A: Processing configuration drop-ins resource: /opt/ol/wlp/usr/servers/defaultServer/configDropins/defaults/open-default-port.xml
+[7/21/23, 21:06:53:925 UTC] 00000001 id=         com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.287 seconds
+[7/21/23, 21:06:54:014 UTC] 00000027 id=         com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[7/21/23, 21:06:54:393 UTC] 0000001e id=         com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[7/21/23, 21:06:54:744 UTC] 0000001e id=         com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[7/21/23, 21:06:55:536 UTC] 0000001e id=         com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[7/21/23, 21:06:55:539 UTC] 0000001e id=         com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[7/21/23, 21:06:55:539 UTC] 0000001e id=         com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[7/21/23, 21:06:56:056 UTC] 0000002b id=         com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 0.091 seconds.
+[7/21/23, 21:06:56:124 UTC] 00000021 id=         com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: /opt/ol/wlp/output/defaultServer/resources/security/key.p12 of type: PKCS12
+[7/21/23, 21:06:56:132 UTC] 0000001e id=         ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been activated. 
+[7/21/23, 21:06:56:621 UTC] 0000001e id=         com.ibm.ws.security.jwt.internal.ConsumerImpl                I CWWKS6012I: The JSON Web Token (JWT) consumer service is available.
+[7/21/23, 21:06:56:646 UTC] 0000001e id=         com.ibm.ws.security.jwt.web.JwtEndpointServices              I CWWKS6002I: The JSON Web Token (JWT) endpoint service is available.
+[7/21/23, 21:06:56:670 UTC] 0000001e id=         com.ibm.ws.security.social.internal.SocialLoginServiceImpl   I CWWKS5400I: The social login configuration [SocialLoginService] was successfully processed.
+[7/21/23, 21:06:56:711 UTC] 0000001e id=         com.ibm.ws.security.social.web.EndpointServices              I CWWKS5407I: The Social Login Version 1.0 endpoint service is activated.
+[7/21/23, 21:06:56:718 UTC] 0000001e id=         com.ibm.ws.security.social.internal.OkdServiceLoginImpl      I CWWKS5400I: The social login configuration [okdServiceLogin] was successfully processed.
+[7/21/23, 21:06:56:842 UTC] 0000001e id=         com.ibm.ws.security.oauth20.web.OAuth20EndpointServices      I CWWKS1410I: The OAuth endpoint service is activated.
+[7/21/23, 21:06:56:916 UTC] 0000001e id=         com.ibm.ws.security.wim.VMMService                           I CWIMK0009I: The user registry federation service is ready.
+[7/21/23, 21:06:56:928 UTC] 0000001e id=         com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0008I: The security service is ready.
+[7/21/23, 21:06:57:464 UTC] 00000028 id=         com.ibm.ws.jsp.JspOptions                                    I populateOptions JSPG8502I: The value of the JSP attribute jdkSourceLevel is "15".
+[7/21/23, 21:06:57:464 UTC] 0000002b id=         com.ibm.ws.jsp.JspOptions                                    I populateOptions JSPG8502I: The value of the JSP attribute jdkSourceLevel is "15".
+[7/21/23, 21:06:57:559 UTC] 00000029 id=         com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.ws.security.jwt.
+[7/21/23, 21:06:57:562 UTC] 00000029 id=         com.ibm.ws.webcontainer.osgi.DynamicVirtualHost              I addWebApplication SRVE0250I: Web Module com.ibm.ws.security.jwt has been bound to default_host.
+[7/21/23, 21:06:57:564 UTC] 00000029 id=         com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): https://wsa-health-webhooks-apis-6fc696775c-7fdf9:8443/jwt/
+[7/21/23, 21:06:57:615 UTC] 00000028 id=         com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.oauth.test.war.
+[7/21/23, 21:06:57:616 UTC] 00000028 id=         com.ibm.ws.webcontainer.osgi.DynamicVirtualHost              I addWebApplication SRVE0250I: Web Module com.ibm.oauth.test.war has been bound to default_host.
+[7/21/23, 21:06:57:616 UTC] 00000028 id=         com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): https://wsa-health-webhooks-apis-6fc696775c-7fdf9:8443/oauth2/
+[7/21/23, 21:06:57:617 UTC] 0000002b id=         com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Social Login 1.0 Endpoint Servlet.
+[7/21/23, 21:06:57:617 UTC] 0000002b id=         com.ibm.ws.webcontainer.osgi.DynamicVirtualHost              I addWebApplication SRVE0250I: Web Module Social Login 1.0 Endpoint Servlet has been bound to default_host.
+[7/21/23, 21:06:57:622 UTC] 0000002b id=         com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): https://wsa-health-webhooks-apis-6fc696775c-7fdf9:8443/ibm/api/social-login/
+[7/21/23, 21:06:57:638 UTC] 00000028 id=         com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application automation-healing-webhooks-rest.
+[7/21/23, 21:06:57:640 UTC] 00000028 id=         bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0136I: The automation-healing-webhooks-rest application is using the archive file at the /opt/ol/wlp/usr/servers/defaultServer/apps/automation-healing-webhooks-rest.war location.
+[7/21/23, 21:06:57:645 UTC] 00000029 id=         com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: health.
+[7/21/23, 21:06:57:645 UTC] 00000029 id=         com.ibm.ws.webcontainer.osgi.DynamicVirtualHost              I addWebApplication SRVE0250I: Web Module health has been bound to default_host.
+[7/21/23, 21:06:57:646 UTC] 00000029 id=         com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): https://wsa-health-webhooks-apis-6fc696775c-7fdf9:8443/health/
+[7/21/23, 21:06:57:772 UTC] 00000029 id=         SessionMgrComponentImpl                                      I initialize SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[7/21/23, 21:06:57:810 UTC] 00000029 id=         SessionContextRegistryImpl                                   I getSessionContext SESN0176I: A new session context will be created for application key default_host/oauth2
+[7/21/23, 21:06:57:844 UTC] 00000029 id=         IDGeneratorImpl                                              I IDGeneratorImpl SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[7/21/23, 21:06:57:945 UTC] 00000029 id=         com.ibm.ws.jsp.JspOptions                                    I populateOptions JSPG8502I: The value of the JSP attribute jdkSourceLevel is "15".
+[7/21/23, 21:06:58:023 UTC] 0000002b id=         SessionContextRegistryImpl                                   I getSessionContext SESN0176I: A new session context will be created for application key default_host/jwt
+[7/21/23, 21:06:58:024 UTC] 0000002b id=         IDGeneratorImpl                                              I IDGeneratorImpl SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[7/21/23, 21:06:58:027 UTC] 00000029 id=         com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[7/21/23, 21:06:58:230 UTC] 0000002b id=         SessionContextRegistryImpl                                   I getSessionContext SESN0176I: A new session context will be created for application key default_host/ibm/api/social-login
+[7/21/23, 21:06:58:231 UTC] 0000002b id=         IDGeneratorImpl                                              I IDGeneratorImpl SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[7/21/23, 21:06:58:238 UTC] 0000002b id=         com.ibm.ws.jsp.JspOptions                                    I populateOptions JSPG8502I: The value of the JSP attribute jdkSourceLevel is "15".
+[7/21/23, 21:06:58:239 UTC] 00000029 id=         com.ibm.ws.webcontainer.security.ServletStartedListener      I CWWKS9122I:  For URL /login.jsp in application com.ibm.ws.security.oauth.2.0, the following HTTP methods are uncovered, and accessible: PUT DELETE HEAD OPTIONS TRACE 
+[7/21/23, 21:06:58:240 UTC] 00000029 id=         com.ibm.ws.webcontainer.security.ServletStartedListener      I CWWKS9122I:  For URL /declarativeEndpoint/* in application com.ibm.ws.security.oauth.2.0, the following HTTP methods are uncovered, and accessible: PUT DELETE HEAD OPTIONS TRACE 
+[7/21/23, 21:06:58:240 UTC] 00000029 id=         com.ibm.ws.webcontainer.security.ServletStartedListener      I CWWKS9122I:  For URL /clientMetatype in application com.ibm.ws.security.oauth.2.0, the following HTTP methods are uncovered, and accessible: POST PUT DELETE HEAD OPTIONS TRACE 
+[7/21/23, 21:06:58:352 UTC] 0000002b id=         SessionContextRegistryImpl                                   I getSessionContext SESN0176I: A new session context will be created for application key default_host/health
+[7/21/23, 21:06:58:352 UTC] 0000002b id=         IDGeneratorImpl                                              I IDGeneratorImpl SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[7/21/23, 21:06:58:616 UTC] 0000002b id=         com.ibm.ws.webcontainer.servlet.ServletWrapper               I init SRVE0242I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckReadinessServlet]: Initialization successful.
+[7/21/23, 21:06:58:619 UTC] 0000002b id=         com.ibm.ws.webcontainer.servlet.ServletWrapper               I init SRVE0242I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckServlet]: Initialization successful.
+[7/21/23, 21:06:58:621 UTC] 0000002b id=         com.ibm.ws.webcontainer.servlet.ServletWrapper               I init SRVE0242I: [io.openliberty.microprofile.health.3.0.internal] [/health] [HealthCheckLivenessServlet]: Initialization successful.
+[7/21/23, 21:06:59:015 UTC] 00000029 id=         com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ol/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[7/21/23, 21:07:00:340 UTC] 00000028 id=         org.jboss.weld.bootstrap.WeldStartup                         I <clinit> WELD-000900: 3.1.9 (Final)
+[7/21/23, 21:07:02:629 UTC] 00000028 id=         org.hibernate.validator.internal.util.Version                I <clinit> HV000001: Hibernate Validator 6.1.7.Final
+[7/21/23, 21:07:03:974 UTC] 00000028 id=         com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[7/21/23, 21:07:03:975 UTC] 00000028 id=         com.ibm.ws.webcontainer.osgi.DynamicVirtualHost              I addWebApplication SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[7/21/23, 21:07:03:975 UTC] 00000028 id=         com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): https://wsa-health-webhooks-apis-6fc696775c-7fdf9:8443/webhooks/
+[7/21/23, 21:07:03:977 UTC] 00000029 id=         SessionContextRegistryImpl                                   I getSessionContext SESN0176I: A new session context will be created for application key default_host/webhooks
+[7/21/23, 21:07:03:978 UTC] 00000029 id=         IDGeneratorImpl                                              I IDGeneratorImpl SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[7/21/23, 21:07:04:085 UTC] 00000028 id=         com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ol/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[7/21/23, 21:07:04:293 UTC] 00000029 id=         com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application automation-healing-webhooks-rest started in 6.655 seconds.
+[7/21/23, 21:07:04:319 UTC] 00000027 id=         com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host *  (IPv6) port 8443.
+[7/21/23, 21:07:04:327 UTC] 00000027 id=         com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [appSecurity-2.0, beanValidation-2.0, cdi-2.0, distributedMap-1.0, el-3.0, federatedRegistry-1.0, jaxrs-2.1, jaxrsClient-2.1, jndi-1.0, json-1.0, jsonp-1.1, jsp-2.3, jwt-1.0, ldapRegistry-3.0, mpConfig-2.0, mpHealth-3.0, oauth-2.0, servlet-4.0, socialLogin-1.0, ssl-1.0, transportSecurity-1.0].
+[7/21/23, 21:07:04:327 UTC] 00000027 id=         com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 10.418 seconds.
+[7/21/23, 21:07:04:327 UTC] 00000027 id=         com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 11.704 seconds.
+[7/21/23, 21:07:26:396 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties Kafka Client Properties:
+[7/21/23, 21:07:26:397 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties security.protocol : SASL_SSL
+[7/21/23, 21:07:26:398 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.protocol : TLSv1.2
+[7/21/23, 21:07:26:398 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.location : /etc/wasintops/ca/trust.p12
+[7/21/23, 21:07:26:399 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties sasl.mechanism : SCRAM-SHA-512
+[7/21/23, 21:07:26:399 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.enabled.protocols : TLSv1.2
+[7/21/23, 21:07:26:400 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties bootstrap.servers : iaf-system-kafka-bootstrap.websphere-automation.svc:9093
+[7/21/23, 21:07:26:400 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.type : PKCS12
+[7/21/23, 21:07:26:421 UTC] 00000029 id=                                                                      R  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[7/21/23, 21:07:26:422 UTC] 00000029 id=                                                                      R  SLF4J: Defaulting to no-operation (NOP) logger implementation
+[7/21/23, 21:07:26:422 UTC] 00000029 id=                                                                      R  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[7/21/23, 21:07:41:639 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties Kafka Client Properties:
+[7/21/23, 21:07:41:640 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties security.protocol : SASL_SSL
+[7/21/23, 21:07:41:641 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.protocol : TLSv1.2
+[7/21/23, 21:07:41:641 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.location : /etc/wasintops/ca/trust.p12
+[7/21/23, 21:07:41:642 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties sasl.mechanism : SCRAM-SHA-512
+[7/21/23, 21:07:41:642 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.enabled.protocols : TLSv1.2
+[7/21/23, 21:07:41:643 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties bootstrap.servers : iaf-system-kafka-bootstrap.websphere-automation.svc:9093
+[7/21/23, 21:07:41:643 UTC] 00000028 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.type : PKCS12
+[7/21/23, 21:07:41:636 UTC] 00000029 id=         g.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck E call Exception when attempting to connect to Kafka: Failed to construct kafka producer
+org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:440)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:291)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:318)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:303)
+	at com.ibm.ws.automation.util.notifications.impl.clients.NotificationPublisher.createProducer(NotificationPublisher.java:144)
+	at com.ibm.ws.automation.util.notifications.impl.clients.NotificationPublisher.<init>(NotificationPublisher.java:61)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.createPublisher(NotificationsManager.java:262)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.init(NotificationsManager.java:282)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.<init>(NotificationsManager.java:89)
+	at com.ibm.ws.automation.util.notifications.NotificationsManagerFactory.getInstance(NotificationsManagerFactory.java:37)
+	at com.ibm.ws.automation.util.notifications.NotificationsManagerFactory.getInstance(NotificationsManagerFactory.java:32)
+	at com.ibm.ws.automation.healing.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck.call(KafkaConnectivityReadinessCheck.java:53)
+	at com.ibm.ws.automation.healing.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck$Proxy$_$$_WeldClientProxy.call(Unknown Source)
+	at io.openliberty.microprofile.health30.services.impl.HealthCheck30CDIBeanInvokerImpl.checkAllBeans(HealthCheck30CDIBeanInvokerImpl.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:79)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:101)
+	at com.sun.proxy.$Proxy45.checkAllBeans(Unknown Source)
+	at io.openliberty.microprofile.health30.services.impl.HealthCheck30ExecutorImpl.runHealthChecks(HealthCheck30ExecutorImpl.java:89)
+	at io.openliberty.microprofile.health30.internal.HealthCheck30ServiceImpl.performHealthCheck(HealthCheck30ServiceImpl.java:149)
+	at io.openliberty.microprofile.health30.internal.servlet.HealthCheckReadinessServlet.service(HealthCheckReadinessServlet.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:791)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1260)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:748)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:445)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:92)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1068)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:5080)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:318)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1038)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:283)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1248)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:470)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:429)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:569)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:503)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:363)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:330)
+	at com.ibm.ws.http.channel.h2internal.H2StreamProcessor$Http2Ready.run(H2StreamProcessor.java:1811)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:247)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:839)
+Caused by: org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:89)
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:48)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:414)
+	... 50 more
+
+[7/21/23, 21:07:41:649 UTC] 00000029 id=         icroprofile.health30.services.impl.HealthCheck30ExecutorImpl W CWMMH0052W: The class io.openliberty.microprofile.health30.impl.HealthCheck30ResponseImpl implementing HealthCheckResponse in the automation-healing-webhooks-rest application in module automation-healing-webhooks-rest.war, reported a DOWN status with data Optional[{}].
+[7/21/23, 21:07:41:658 UTC] 00000028 id=         g.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck E call Exception when attempting to connect to Kafka: Failed to construct kafka producer
+org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:440)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:291)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:318)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:303)
+	at com.ibm.ws.automation.util.notifications.impl.clients.NotificationPublisher.createProducer(NotificationPublisher.java:144)
+	at com.ibm.ws.automation.util.notifications.impl.clients.NotificationPublisher.<init>(NotificationPublisher.java:61)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.createPublisher(NotificationsManager.java:262)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.init(NotificationsManager.java:282)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.<init>(NotificationsManager.java:89)
+	at com.ibm.ws.automation.util.notifications.NotificationsManagerFactory.getInstance(NotificationsManagerFactory.java:37)
+	at com.ibm.ws.automation.util.notifications.NotificationsManagerFactory.getInstance(NotificationsManagerFactory.java:32)
+	at com.ibm.ws.automation.healing.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck.call(KafkaConnectivityReadinessCheck.java:53)
+	at com.ibm.ws.automation.healing.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck$Proxy$_$$_WeldClientProxy.call(Unknown Source)
+	at io.openliberty.microprofile.health30.services.impl.HealthCheck30CDIBeanInvokerImpl.checkAllBeans(HealthCheck30CDIBeanInvokerImpl.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:79)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:101)
+	at com.sun.proxy.$Proxy45.checkAllBeans(Unknown Source)
+	at io.openliberty.microprofile.health30.services.impl.HealthCheck30ExecutorImpl.runHealthChecks(HealthCheck30ExecutorImpl.java:89)
+	at io.openliberty.microprofile.health30.internal.HealthCheck30ServiceImpl.performHealthCheck(HealthCheck30ServiceImpl.java:149)
+	at io.openliberty.microprofile.health30.internal.servlet.HealthCheckReadinessServlet.service(HealthCheckReadinessServlet.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:791)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1260)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:748)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:445)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:92)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1068)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:5080)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:318)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1038)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:283)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1248)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:470)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:429)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:569)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:503)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:363)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:330)
+	at com.ibm.ws.http.channel.h2internal.H2StreamProcessor$Http2Ready.run(H2StreamProcessor.java:1811)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:247)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:839)
+Caused by: org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:89)
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:48)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:414)
+	... 50 more
+
+[7/21/23, 21:07:41:669 UTC] 00000028 id=         icroprofile.health30.services.impl.HealthCheck30ExecutorImpl W CWMMH0052W: The class io.openliberty.microprofile.health30.impl.HealthCheck30ResponseImpl implementing HealthCheckResponse in the automation-healing-webhooks-rest application in module automation-healing-webhooks-rest.war, reported a DOWN status with data Optional[{}].
+[7/21/23, 21:07:44:651 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties Kafka Client Properties:
+[7/21/23, 21:07:44:653 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties security.protocol : SASL_SSL
+[7/21/23, 21:07:44:654 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.protocol : TLSv1.2
+[7/21/23, 21:07:44:655 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.location : /etc/wasintops/ca/trust.p12
+[7/21/23, 21:07:44:655 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties sasl.mechanism : SCRAM-SHA-512
+[7/21/23, 21:07:44:656 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.enabled.protocols : TLSv1.2
+[7/21/23, 21:07:44:657 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties bootstrap.servers : iaf-system-kafka-bootstrap.websphere-automation.svc:9093
+[7/21/23, 21:07:44:657 UTC] 00000034 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.type : PKCS12
+[7/21/23, 21:07:44:665 UTC] 00000034 id=         g.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck E call Exception when attempting to connect to Kafka: Failed to construct kafka producer
+org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:440)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:291)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:318)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:303)
+	at com.ibm.ws.automation.util.notifications.impl.clients.NotificationPublisher.createProducer(NotificationPublisher.java:144)
+	at com.ibm.ws.automation.util.notifications.impl.clients.NotificationPublisher.<init>(NotificationPublisher.java:61)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.createPublisher(NotificationsManager.java:262)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.init(NotificationsManager.java:282)
+	at com.ibm.ws.automation.util.notifications.NotificationsManager.<init>(NotificationsManager.java:89)
+	at com.ibm.ws.automation.util.notifications.NotificationsManagerFactory.getInstance(NotificationsManagerFactory.java:37)
+	at com.ibm.ws.automation.util.notifications.NotificationsManagerFactory.getInstance(NotificationsManagerFactory.java:32)
+	at com.ibm.ws.automation.healing.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck.call(KafkaConnectivityReadinessCheck.java:53)
+	at com.ibm.ws.automation.healing.webhooks.rest.healthchecks.KafkaConnectivityReadinessCheck$Proxy$_$$_WeldClientProxy.call(Unknown Source)
+	at io.openliberty.microprofile.health30.services.impl.HealthCheck30CDIBeanInvokerImpl.checkAllBeans(HealthCheck30CDIBeanInvokerImpl.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:79)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:101)
+	at com.sun.proxy.$Proxy45.checkAllBeans(Unknown Source)
+	at io.openliberty.microprofile.health30.services.impl.HealthCheck30ExecutorImpl.runHealthChecks(HealthCheck30ExecutorImpl.java:89)
+	at io.openliberty.microprofile.health30.internal.HealthCheck30ServiceImpl.performHealthCheck(HealthCheck30ServiceImpl.java:149)
+	at io.openliberty.microprofile.health30.internal.servlet.HealthCheckReadinessServlet.service(HealthCheckReadinessServlet.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:791)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1260)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:748)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:445)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:92)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1068)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1077)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:969)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:283)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1248)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:470)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:429)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:569)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:503)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:363)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:330)
+	at com.ibm.ws.http.channel.h2internal.H2StreamProcessor$Http2Ready.run(H2StreamProcessor.java:1811)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:247)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:839)
+Caused by: org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:89)
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:48)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:414)
+	... 51 more
+
+[7/21/23, 21:07:44:683 UTC] 00000034 id=         icroprofile.health30.services.impl.HealthCheck30ExecutorImpl W CWMMH0052W: The class io.openliberty.microprofile.health30.impl.HealthCheck30ResponseImpl implementing HealthCheckResponse in the automation-healing-webhooks-rest application in module automation-healing-webhooks-rest.war, reported a DOWN status with data Optional[{}].
+[7/21/23, 21:07:54:635 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties Kafka Client Properties:
+[7/21/23, 21:07:54:636 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties security.protocol : SASL_SSL
+[7/21/23, 21:07:54:637 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.protocol : TLSv1.2
+[7/21/23, 21:07:54:637 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.location : /etc/wasintops/ca/trust.p12
+[7/21/23, 21:07:54:638 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties sasl.mechanism : SCRAM-SHA-512
+[7/21/23, 21:07:54:638 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.enabled.protocols : TLSv1.2
+[7/21/23, 21:07:54:638 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties bootstrap.servers : iaf-system-kafka-bootstrap.websphere-automation.svc:9093
+[7/21/23, 21:07:54:639 UTC] 00000029 id=         com.ibm.ws.automation.util.kafkaclient.KafkaProperties       I getClientProperties ssl.truststore.type : PKCS12
+[7/31/23, 18:52:05:513 UTC] 000001d8 id=         .apache.cxf.cxf.core.3.2:1.0.77.cl230520230514-1901(id=211)] I Setting the server's publish address to be /
+[7/31/23, 18:52:05:658 UTC] 000001d8 id=         com.ibm.ws.webcontainer.servlet.ServletWrapper               I init SRVE0242I: [automation-healing-webhooks-rest] [/webhooks] [com.ibm.ws.automation.healing.webhooks.rest.impl.ApplicationConfig]: Initialization successful.
+[7/31/23, 18:52:06:942 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 18:52:07:016 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "bKoKYL4VTgeyG-rDspN5Qw",
+    "type" : "change",
+    "start" : 1690829523632,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 18:52:07:251 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={bKoKYL4VTgeyG-rDspN5Qw}
+[7/31/23, 18:52:07:260 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 18:55:11:898 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 18:55:11:900 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "D6w1-c1QRiSXo3DiwCLVOg",
+    "type" : "change",
+    "start" : 1690829711779,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 18:55:11:903 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={D6w1-c1QRiSXo3DiwCLVOg}
+[7/31/23, 18:55:11:903 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 18:59:06:440 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 18:59:06:442 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "3KoGbasSS7mkMfZHu3HIBw",
+    "type" : "change",
+    "start" : 1690829946363,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 18:59:06:443 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={3KoGbasSS7mkMfZHu3HIBw}
+[7/31/23, 18:59:06:443 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 19:41:29:900 UTC] 000001d1 id=         com.ibm.ws.security.social.tai.OAuthLoginFlow                E CWWKS5375E: The social login configuration [okdServiceLogin] specifies that an access token is required in the request, but an access token is not present.
+[7/31/23, 19:44:48:465 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 19:44:48:467 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "nGCl1h2iR_Gwtobjy3YvuQ",
+    "type" : "change",
+    "start" : 1690832688287,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 19:44:48:468 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={nGCl1h2iR_Gwtobjy3YvuQ}
+[7/31/23, 19:44:48:469 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 19:46:53:750 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 19:46:53:752 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "QMuAEssnRjy3KIw5LWGl7g",
+    "type" : "change",
+    "start" : 1690832813664,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 19:46:53:754 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={QMuAEssnRjy3KIw5LWGl7g}
+[7/31/23, 19:46:53:754 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 19:52:03:422 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 19:52:03:424 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "nAXnP7zZS4u7b3SRMXuepQ",
+    "type" : "change",
+    "start" : 1690833123336,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 19:52:03:425 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={nAXnP7zZS4u7b3SRMXuepQ}
+[7/31/23, 19:52:03:426 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 19:52:17:504 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 19:52:17:506 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "Od_14PhRRbeDRbtOR6eOJA",
+    "type" : "change",
+    "start" : 1690833137466,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 19:52:17:508 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={Od_14PhRRbeDRbtOR6eOJA}
+[7/31/23, 19:52:17:509 UTC] 000001d8 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 19:52:24:014 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 19:52:24:016 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "BgUdS-zbSE2SZ74YZ42vCw",
+    "type" : "change",
+    "start" : 1690833143980,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 19:52:24:019 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={BgUdS-zbSE2SZ74YZ42vCw}
+[7/31/23, 19:52:24:019 UTC] 000001d1 id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=
+[7/31/23, 19:58:16:650 UTC] 000001dd id=         com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "com.ibm.ws.security.social.error.SocialLoginException: CWWKS5383E: The user API returned an unexpected [401] response code. Verify that the request to the API contains all required information. The response from the API is [{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Unauthorized","reason":"Unauthorized","code":401}]. com.ibm.ws.security.social.internal.utils.OpenShiftUserApiUtils 76" at ffdc_23.07.31_19.58.16.0.log
+[7/31/23, 19:58:16:654 UTC] 000001dd id=         com.ibm.ws.security.social.tai.TAIUserApiUtils               E CWWKS5461E: The social login feature encountered an error while getting user information from the user API [https://openshift.default.svc/apis/user.openshift.io/v1/users/~] that is configured for social login configuration [okdServiceLogin]. CWWKS5382E: The following response from the user API cannot be processed: com.ibm.ws.security.social.error.SocialLoginException: CWWKS5383E: The user API returned an unexpected [401] response code. Verify that the request to the API contains all required information. The response from the API is [{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Unauthorized","reason":"Unauthorized","code":401}].
+[7/31/23, 19:58:16:655 UTC] 000001dd id=         com.ibm.ws.security.social.error.SocialLoginException        E CWWKS5452E: The social login feature cannot authenticate the user because the response from the user API that is configured for the social login configuration [okdServiceLogin] is null or empty.
+[7/31/23, 19:59:29:661 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Received an Instana webhook POST request
+[7/31/23, 19:59:29:663 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Incident: {
+  "issue" : {
+    "id" : "btAlJyo3S36uXUIAWXw9Lg",
+    "type" : "change",
+    "start" : 1690833569489,
+    "text" : "Integration test",
+    "description" : "It works!",
+    "link" : "https://www.instana.com/docs/ecosystem/webhook/",
+    "customZone" : "not available",
+    "availabilityZone" : "not available",
+    "zone" : "not available",
+    "fqdn" : "not available",
+    "entity" : "not available",
+    "entityLabel" : "not available",
+    "tags" : "not available",
+    "container" : "not available",
+    "service" : "not available",
+    "containerNames" : [ ]
+  }
+}
+[7/31/23, 19:59:29:665 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl I memoryLeak Instana incident id={btAlJyo3S36uXUIAWXw9Lg}
+[7/31/23, 19:59:29:666 UTC] 000001dd id=         mation.healing.webhooks.rest.impl.InstanaWebhookResourceImpl W memoryLeak Webhook payload validation error: invalid state=

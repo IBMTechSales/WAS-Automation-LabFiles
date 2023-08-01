@@ -15,7 +15,7 @@ fi
 
 
 
-/opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server > /home/ibmuser/startServer.log
+/opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server -username wasadmin -password wasadmin > /home/ibmuser/startServer.log
 
 IS_STARTED=$(cat /home/ibmuser/startServer.log | grep STARTED | wc -l)
 
@@ -25,7 +25,7 @@ if [[ "$IS_STARTED" -gt 0 ]]; then
   CERT_RESULT="PASS"	
   echo ""
   echo "Stopping the WAS 9057 server..."
-  /opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server
+  /opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server -username wasadmin -password wasadmin
 fi
 
 
@@ -35,25 +35,25 @@ sleep 3
  echo "Now starting the WAS 9057 server..."
 /opt/IBM/WebSphere/AppServer9057/bin/startServer.sh tWAS_9057_server
 
-/opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server
+/opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server -username wasadmin -password wasadmin
 
 echo "" 
 echo " Set the WAS JVM Heap to 512 MB"
 echo "" 
 
-/opt/IBM/WebSphere/AppServer9057/bin/wsadmin.sh -f /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/techxchange/klp-setMaxHeapAndJVMarg.py
+/opt/IBM/WebSphere/AppServer9057/bin/wsadmin.sh -f /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-setMaxHeapAndJVMarg.py
 
 echo ""
 echo "Install the Memory leak application (MLAPP) in WebSphere"
 echo ""
-/opt/IBM/WebSphere/AppServer9057/bin/wsadmin.sh -f /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/techxchange/klp-install_MLApp.py
+/opt/IBM/WebSphere/AppServer9057/bin/wsadmin.sh -f /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-install_MLApp.py
 
 echo "Restarting WAS 9057 server..."
-/opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server
+/opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server -username wasadmin -password wasadmin
 sleep 2
 /opt/IBM/WebSphere/AppServer9057/bin/startServer.sh tWAS_9057_server
 sleep 2
-/opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server
+/opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server -username wasadmin -password wasadmin
 
 
 echo "" 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+    <!-- Enable features -->
+    <featureManager>
+	<feature>jsp-2.3</feature>
+  	<feature>transportSecurity-1.0</feature>
+	<feature>usageMetering-1.0</feature>
+	<feature>monitor-1.0</feature> 
+    </featureManager>
+
+<usageMetering url="${metering-url}" apiKey="${api-key}" sslRef="defaultSSL"/>
+	<keyStore 
+	id="defaultKeyStore"
+   	location="key.p12"
+	password="{xor}KzduMTQvPiwsKDAtOw=="
+	pollingRate="2ms"
+	updateTrigger="polled"
+   	type="PKCS12"/>
+
+	<ssl 
+	id="defaultSSL"
+   	keyStoreRef="defaultKeyStore"
+   	trustStoreRef="defaultKeyStore"
+   	sslProtocol="TLSv1.2"/>
+	
+    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="9081"
+                  httpsPort="9444" 
+		 host="*" />
+
+    <!-- Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+
+</server>

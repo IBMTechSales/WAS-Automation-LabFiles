@@ -70,13 +70,13 @@ echo ""
 echo "-----------------------------------------------------------------------"
 echo "Retrieve WebSphere Automation certificate"
 echo "" 
-echo "echo | openssl s_client -showcerts -servername cpd-websphere-automation.apps.demo.ibmdte.net -connect cpd-websphere-automation.apps.demo.ibmdte.net:443 2>/dev/null | openssl x509 -inform pem > cpd.pem"
+echo "echo | openssl s_client -showcerts -servername cpd-websphere-automation.apps.ocp.ibm.edu -connect cpd-websphere-automation.apps.ocp.ibm.edu:443 2>/dev/null | openssl x509 -inform pem > cpd.pem"
 echo ""
 echo "-----------------------------------------------------------------------"
 echo "" 
 
 
-echo | openssl s_client -showcerts -servername cpd-websphere-automation.apps.demo.ibmdte.net -connect cpd-websphere-automation.apps.demo.ibmdte.net:443 2>/dev/null | openssl x509 -inform pem > cpd.pem
+echo | openssl s_client -showcerts -servername cpd-websphere-automation.apps.ocp.ibm.edu -connect cpd-websphere-automation.apps.ocp.ibm.edu:443 2>/dev/null | openssl x509 -inform pem > cpd.pem
 
 sleep 3
 
@@ -178,12 +178,12 @@ echo ""
 echo "-----------------------------------------------------------------------"
 echo "Copy the remote script, updateInstana.sh to the instana vm"
 echo "" 
-echo "scp /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/techxchange/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh"
+echo "scp /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh"
 echo ""
 echo "-----------------------------------------------------------------------"
 echo "" 
 
-sshpass -p "passw0rd" scp /home/ibmuser/WAS-Automation-LabFiles/lab2-MemoryLeak/techxchange/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh
+sshpass -p "passw0rd" scp /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-updateInstana.sh ibmadmin@instana:/home/ibmadmin/klp-updateInstana.sh
 
 sleep 2
 

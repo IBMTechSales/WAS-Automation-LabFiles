@@ -28,7 +28,7 @@ echo "Start or restart the WAS $1 server"
 
 rm /home/ibmuser/startServer.log
 
-/opt/IBM/WebSphere/AppServer$1/bin/serverStatus.sh tWAS_$1_server > /home/ibmuser/startServer.log
+/opt/IBM/WebSphere/AppServer$1/bin/serverStatus.sh tWAS_$1_server -username wasadmin -password wasadmin > /home/ibmuser/startServer.log
 
 IS_STARTED=$(cat /home/ibmuser/startServer.log | grep STARTED | wc -l)
 
@@ -38,7 +38,7 @@ if [[ "$IS_STARTED" -gt 0 ]]; then
   CERT_RESULT="PASS"	
   echo ""
   echo "Stopping the WAS $1 server..."
-  /opt/IBM/WebSphere/AppServer$1/bin/stopServer.sh tWAS_$1_server
+  /opt/IBM/WebSphere/AppServer$1/bin/stopServer.sh tWAS_$1_server -username wasadmin -password wasadmin
 fi
 
 #/opt/IBM/WebSphere/AppServer$1/bin/stopServer.sh tWAS_$1_server
@@ -49,7 +49,7 @@ sleep 3
  echo "Now starting the WAS $1 server..."
 /opt/IBM/WebSphere/AppServer$1/bin/startServer.sh tWAS_$1_server
 
-#/opt/IBM/WebSphere/AppServer$1/bin/serverStatus.sh tWAS_$1_server
+#/opt/IBM/WebSphere/AppServer$1/bin/serverStatus.sh tWAS_$1_server -username wasadmin -password wasadmin
 
 sleep 4
 

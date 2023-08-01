@@ -9,10 +9,10 @@ do
  then
   echo "Decreased heap usage by ${X}MB"
  fi
- curl http://student.demo.ibmdte.net:9080/MLApp/MLVectorParam?myaction=removeLast 2&>1
+ curl http://localhost:9080/MLApp/MLVectorParam?myaction=removeLast 2&>1
  X=`expr $X + 1`
 done
-curl http://student.demo.ibmdte.net:9080/MLApp/GC 2&>1
+curl http://localhost:9080/MLApp/MLApp/GC 2&>1
 
 echo
 

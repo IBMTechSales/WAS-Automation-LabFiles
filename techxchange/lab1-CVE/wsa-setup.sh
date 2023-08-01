@@ -81,6 +81,7 @@ if [[ -f /home/ibmuser/.ssh/authorized_keys ]]; then
 fi
 
 
+
 echo "list the home.ibmuser/.ssh directory after cleanup"
 ls -al /home/ibmuser/.ssh
 
