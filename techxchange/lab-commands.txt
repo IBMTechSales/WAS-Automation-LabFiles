@@ -1,0 +1,90 @@
+Lab commands file.
+
+Use this file to copy / paste, as needed. 
+
+
+----------
+Section 1
+----------
+
+git clone https://github.com/IBMTechSales/WAS-Automation-LabFiles.git
+
+find ./WAS-Automation-LabFiles -name "*.sh" -exec chmod +x {} \;
+
+ls -l /home/ibmuser/WAS-Automation-LabFiles/techxchange/*
+
+
+--------
+    1.2
+--------	
+
+oc login -u ocadmin -p ibmrhocp
+
+oc project websphere-automation
+
+
+--------
+    1.3
+--------	
+
+cd /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab1-CVE
+
+
+
+----------
+Section 2
+----------
+
+https://cp-console.apps.ocp.ibm.edu/oidc/login.jsp#/homepage
+
+
+
+----------
+Section 3
+----------
+
+cd /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab1-CVE
+
+./register-was-server.sh 9057    
+
+https://cpd-websphere-automation.apps.ocp.ibm.edu/websphereauto/security
+
+
+
+
+----------
+Section 5
+----------
+
+--------
+    5.1
+--------
+
+ps -ef | grep instana
+ 
+
+--------
+    5.4
+--------
+ 
+cd /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak
+ 
+./klp-tWAS_configure_MLApp.sh
+
+https://cp-console.apps.ocp.ibm.edu/oidc/login.jsp#/homepage
+
+/home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-curl_MLAPP_add_was.sh
+
+
+/home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-curl_MLAPP_removeLast.sh
+
+/opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server -username wasadmin -password wasadmin
+
+
+
+
+
+ 
+
+
+
