@@ -254,8 +254,11 @@ oc rsh $MANAGER_POD runcli testConnection student.demo.ibmdte.net linux
 
 
 echo ""
-echo "waiting 60 seconds for pod to start and run the test conection Ansible playbook"
-echo ""
+echo "waiting 90 seconds for pod to start and run the test conection Ansible playbook"
+sleep 15
+echo "75 seconds remaining..."
+sleep 15
+echo "60 seconds remaining..."
 sleep 15
 echo "45 seconds remaining..."
 sleep 15
