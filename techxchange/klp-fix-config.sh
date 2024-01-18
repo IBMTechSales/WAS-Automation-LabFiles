@@ -2,9 +2,11 @@
 
 cp /etc/hosts /etc/hosts.sav
 
-sed -i '/10.100.1.51 student.ocp.ibm.edu.ocp.ibm.edu student.demo.ibmdte.net/d' /etc/hosts
+#remove line if it already exists
+sed -i '/10.100.1.51 student.ocp.ibm.edu student.demo.ibmdte.net/d' /etc/hosts
 
-echo "10.100.1.51 student.ocp.ibm.edu.ocp.ibm.edu student.demo.ibmdte.net" >> /etc/hosts
+#add this line
+echo "10.100.1.51 student.ocp.ibm.edu student.demo.ibmdte.net" >> /etc/hosts
 
 cp /etc/hosts new_hosts
 
