@@ -1,6 +1,20 @@
 #!/bin/sh
 XEND=285
 X=1
+
+#force a GC before running mem leak app
+echo "--> forcing garbage collection"
+curl http://localhost:9080/MLApp/GC 2&>1
+sleep 3
+echo "--> Wait 10 seconds for memory to be released"
+
+#wait for memory to clear
+sleep 10 
+
+echo "--> Invoking memory leak app"
+
+echo ""
+
 while [ $X -le $XEND ]
 do
  MOD25=`expr $X % 25`
