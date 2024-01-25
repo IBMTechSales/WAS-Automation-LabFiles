@@ -22,12 +22,16 @@ oc login -u ocadmin -p ibmrhocp
 
 oc project websphere-automation
 
+oc get wsa
+
 
 --------
     1.3
 --------	
 
 cd /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab1-CVE
+
+./wsa-setup.sh
 
 
 

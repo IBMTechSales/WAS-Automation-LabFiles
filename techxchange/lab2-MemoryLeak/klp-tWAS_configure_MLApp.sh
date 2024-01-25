@@ -1,5 +1,18 @@
 #!/bin/sh
 
+###Update instana cert to ensure it can connect to WSA after OCP cert renewals
+
+echo ""
+echo "Update Instana cert to connect to WSA"
+echo "" 
+echo "shpass -p "passw0rd" ssh root@instana /root/instana-update-cert.sh"
+
+sleep 2 
+
+sshpass -p "passw0rd" ssh root@instana /root/instana-update-cert.sh
+
+sleep 3
+
 
 echo ""
 echo "Configuring WAS 9057 for the lab"
