@@ -125,7 +125,7 @@ sleep 4
 ## The command below requires a file named "config" in ~/.ssh with the folowing line in the file. 
 ## StrictHostKeyChecking no
 
-\cp /home/ibmuser/WAS-Automation-LabFiles/lab1-CVE/ssh-config.txt ~/.ssh/config
+\cp /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab1-CVE/ssh-config.txt ~/.ssh/config
 
 sleep 1
 chmod 700 ~/.ssh/config
